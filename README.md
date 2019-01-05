@@ -4,5 +4,5 @@
   - install nodejs to your pc
   - npm install
   - npm run start
-  - rename env.config.ts to config.ts then start
+  - rename env.config.js to config.js then start
 
