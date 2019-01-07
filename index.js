@@ -2,7 +2,8 @@ const cities = require('./iller.json')
 const centroids = require('./iller-orta.json')
 const config = require('./config')
 const map = document.querySelector('#turkey-svg-cities-continer .map-container .map')
-const mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header')
+const mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-mosque-count')
+const totalPeopleCountDom = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-people-count')
 const menu = document.querySelector('#turkey-svg-cities-continer .map-menu')
 
 const city = menu.querySelector('.map-menu-city')
@@ -17,6 +18,7 @@ const loadSvg = function(data){
     const ySpace = 2590
     let pointArray = ''
     let totalMosqueCount = 0
+    let totalPeopleCount = 0
     for(const index in cities.features){
         const feature = cities.features[index]
         const code = centroids.features[index].properties.ILKOD
@@ -35,15 +37,20 @@ const loadSvg = function(data){
         if(data[code] && data[code].sayi){
             totalMosqueCount += data[code].sayi
         }
+        let totalPeople = data[code] ? data[code].a + data[code].b + data[code].c : '-'
+        if(totalPeople > 0){
+            totalPeopleCount += totalPeople
+        }
         pointArray += `
         <text x="${x}" y="${y}" fill="white">
-            <tspan text-anchor="middle">${data[code] ? (data[code].a + data[code].b + data[code].c): '-'}</tspan>
+            <tspan text-anchor="middle">${totalPeople}</tspan>
             </text>
             <desc>${data[code] ? JSON.stringify({...data[code], name, success: true}): JSON.stringify({name})}</desc>
         </g>`
     }
     if(!isNaN(totalMosqueCount)){
-        mapHeader.innerHTML = 'Toplam Cami ' + totalMosqueCount
+        mapHeader.innerHTML = 'Cami Sayısı: ' + totalMosqueCount
+        totalPeopleCountDom.innerHTML = 'Kayıt Sayısı: ' + totalPeopleCount
     }
     let svg = `
     <svg viewBox="0 0 1080 460" width="100%">
