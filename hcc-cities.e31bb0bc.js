@@ -1771,7 +1771,8 @@ var centroids = require('./iller-orta.json');
 var config = require('./config');
 
 var map = document.querySelector('#turkey-svg-cities-continer .map-container .map');
-var mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header');
+var mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-mosque-count');
+var totalPeopleCountDom = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-people-count');
 var menu = document.querySelector('#turkey-svg-cities-continer .map-menu');
 var city = menu.querySelector('.map-menu-city');
 var categoryA = menu.querySelector('.map-menu-category.a');
@@ -1785,6 +1786,7 @@ var loadSvg = function loadSvg(data) {
   var ySpace = 2590;
   var pointArray = '';
   var totalMosqueCount = 0;
+  var totalPeopleCount = 0;
 
   for (var index in cities.features) {
     var feature = cities.features[index];
@@ -1854,7 +1856,13 @@ var loadSvg = function loadSvg(data) {
       totalMosqueCount += data[code].sayi;
     }
 
-    pointArray += "\n        <text x=\"".concat(x, "\" y=\"").concat(y, "\" fill=\"white\">\n            <tspan text-anchor=\"middle\">").concat(data[code] ? data[code].a + data[code].b + data[code].c : '-', "</tspan>\n            </text>\n            <desc>").concat(data[code] ? JSON.stringify(_objectSpread({}, data[code], {
+    var totalPeople = data[code] ? data[code].a + data[code].b + data[code].c : '-';
+
+    if (totalPeople > 0) {
+      totalPeopleCount += totalPeople;
+    }
+
+    pointArray += "\n        <text x=\"".concat(x, "\" y=\"").concat(y, "\" fill=\"white\">\n            <tspan text-anchor=\"middle\">").concat(totalPeople, "</tspan>\n            </text>\n            <desc>").concat(data[code] ? JSON.stringify(_objectSpread({}, data[code], {
       name: name,
       success: true
     })) : JSON.stringify({
@@ -1863,7 +1871,8 @@ var loadSvg = function loadSvg(data) {
   }
 
   if (!isNaN(totalMosqueCount)) {
-    mapHeader.innerHTML = 'Toplam Cami ' + totalMosqueCount;
+    mapHeader.innerHTML = 'Cami Sayısı: ' + totalMosqueCount;
+    totalPeopleCountDom.innerHTML = 'Kayıt Sayısı: ' + totalPeopleCount;
   }
 
   var svg = "\n    <svg viewBox=\"0 0 1080 460\" width=\"100%\">\n    ".concat(pointArray, "\n    </svg>\n    ");
@@ -1945,7 +1954,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59798" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63790" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
