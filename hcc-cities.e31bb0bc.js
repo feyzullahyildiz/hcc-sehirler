@@ -942,7 +942,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [2962238, 5049472]
+      "coordinates": [2949470, 4978415]
     }
   }, {
     "type": "Feature",
@@ -1012,7 +1012,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4385802, 4673755]
+      "coordinates": [4370258, 4657101]
     }
   }, {
     "type": "Feature",
@@ -1062,7 +1062,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4734141, 4502656]
+      "coordinates": [4720263, 4490443]
     }
   }, {
     "type": "Feature",
@@ -1122,7 +1122,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3048276, 5023973]
+      "coordinates": [3031067, 5015646]
     }
   }, {
     "type": "Feature",
@@ -1132,7 +1132,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4006111, 5044527]
+      "coordinates": [3990012, 5043972]
     }
   }, {
     "type": "Feature",
@@ -1152,7 +1152,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4891316, 4852704]
+      "coordinates": [4885210, 4843267]
     }
   }, {
     "type": "Feature",
@@ -1182,7 +1182,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4160448, 4450391]
+      "coordinates": [4164334, 4445950]
     }
   }, {
     "type": "Feature",
@@ -1222,7 +1222,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3017975, 4623812]
+      "coordinates": [3038515, 4609101]
     }
   }, {
     "type": "Feature",
@@ -1242,7 +1242,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4593034, 4574729]
+      "coordinates": [4601361, 4532539]
     }
   }, {
     "type": "Feature",
@@ -1272,7 +1272,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3544921, 5051156]
+      "coordinates": [3546864, 5047825]
     }
   }, {
     "type": "Feature",
@@ -1292,7 +1292,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3172196, 5043393]
+      "coordinates": [3171086, 5038397]
     }
   }, {
     "type": "Feature",
@@ -1332,7 +1332,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3395684, 4975039]
+      "coordinates": [3394019, 4970598]
     }
   }, {
     "type": "Feature",
@@ -1362,7 +1362,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4132080, 4411730]
+      "coordinates": [4124308, 4415061]
     }
   }, {
     "type": "Feature",
@@ -1392,7 +1392,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3175878, 4438565]
+      "coordinates": [3113703, 4461881]
     }
   }, {
     "type": "Feature",
@@ -1422,7 +1422,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3862511, 4692705]
+      "coordinates": [3855294, 4686043]
     }
   }, {
     "type": "Feature",
@@ -1452,7 +1452,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3466408, 4453586]
+      "coordinates": [3466408, 4445259]
     }
   }, {
     "type": "Feature",
@@ -1482,7 +1482,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3326569, 4989852]
+      "coordinates": [3338227, 4988464]
     }
   }, {
     "type": "Feature",
@@ -1492,7 +1492,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4661800, 4722945]
+      "coordinates": [4630158, 4700740]
     }
   }, {
     "type": "Feature",
@@ -1502,7 +1502,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3268192, 4660083]
+      "coordinates": [3252648, 4648980]
     }
   }, {
     "type": "Feature",
@@ -1552,7 +1552,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3635768, 5039680]
+      "coordinates": [3626886, 5025802]
     }
   }, {
     "type": "Feature",
@@ -1582,7 +1582,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4433328, 4983888]
+      "coordinates": [4419450, 4983333]
     }
   }, {
     "type": "Feature",
@@ -1602,7 +1602,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3974760, 4969898]
+      "coordinates": [3975870, 4959906]
     }
   }, {
     "type": "Feature",
@@ -1612,7 +1612,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4035698, 4359692]
+      "coordinates": [4034033, 4345536]
     }
   }, {
     "type": "Feature",
@@ -1622,7 +1622,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [3618627, 5098814]
+      "coordinates": [3618627, 5095483]
     }
   }, {
     "type": "Feature",
@@ -1672,7 +1672,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4549418, 5003279]
+      "coordinates": [4542756, 4997173]
     }
   }, {
     "type": "Feature",
@@ -1712,7 +1712,7 @@ module.exports = {
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [4372710, 4816564]
+      "coordinates": [4318307, 4806017]
     }
   }, {
     "type": "Feature",
@@ -1770,13 +1770,15 @@ var centroids = require('./iller-orta.json');
 
 var config = require('./config');
 
-var container = document.querySelector('#turkey-svg-citiescontiner .container');
-var menu = document.querySelector('#turkey-svg-citiescontiner .menu'); // [ 2857405, 4275017 ], [ 2857405, 5175729 ], [ 4989109, 5175729 ], [ 4989109, 4275017 ], [ 2857405, 4275017 ] //bbox
+var map = document.querySelector('#turkey-svg-cities-continer .map-container .map');
+var mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header');
+var menu = document.querySelector('#turkey-svg-cities-continer .map-menu'); // [ 2857405, 4275017 ], [ 2857405, 5175729 ], [ 4989109, 5175729 ], [ 4989109, 4275017 ], [ 2857405, 4275017 ] //bbox
 
 var loadSvg = function loadSvg(data) {
   var xSpace = 1420;
   var ySpace = 2590;
   var pointArray = '';
+  var totalMosqueCount = 0;
 
   for (var index in cities.features) {
     var feature = cities.features[index];
@@ -1842,13 +1844,24 @@ var loadSvg = function loadSvg(data) {
       }
     }
 
+    if (data[code] && data[code].sayi) {
+      totalMosqueCount += data[code].sayi;
+    }
+
     pointArray += "\n        <text x=\"".concat(x, "\" y=\"").concat(y, "\" fill=\"white\">\n            <tspan text-anchor=\"middle\">").concat(data[code] ? data[code].a + data[code].b + data[code].c : '-', "</tspan>\n            </text>\n            <desc>").concat(data[code] ? JSON.stringify(_objectSpread({}, data[code], {
+      name: name,
+      success: true
+    })) : JSON.stringify({
       name: name
-    })) : '', "</desc>\n        </g>");
+    }), "</desc>\n        </g>");
+  }
+
+  if (!isNaN(totalMosqueCount)) {
+    mapHeader.innerHTML = 'Toplam Cami ' + totalMosqueCount;
   }
 
   var svg = "\n    <svg viewBox=\"0 0 1080 460\" width=\"100%\">\n    ".concat(pointArray, "\n    </svg>\n    ");
-  container.innerHTML = svg;
+  map.innerHTML = svg;
 
   var _menu$querySelectorAl = menu.querySelectorAll('li span'),
       _menu$querySelectorAl2 = _slicedToArray(_menu$querySelectorAl, 6),
@@ -1860,16 +1873,26 @@ var loadSvg = function loadSvg(data) {
       countOfMosque = _menu$querySelectorAl2[5]; // console.log('city', city)
 
 
-  var citiesPolygons = container.querySelectorAll('svg g');
+  var citiesPolygons = map.querySelectorAll('svg g');
+  var oldPolygons;
 
   var onEnter = function onEnter() {
+    if (oldPolygons) {
+      oldPolygons.forEach(function (oldPolygon) {
+        oldPolygon.style.fill = '';
+      });
+    }
+
+    oldPolygons = [];
     this.querySelectorAll('polygon').forEach(function (polygon) {
-      polygon.style.fill = '#ff922b';
+      oldPolygons.push(polygon);
+      polygon.style.fill = '#f49225';
     });
     var data = this.querySelector('desc');
 
-    if (data.innerHTML) {
-      menu.style.display = 'flex';
+    if (data.innerHTML && JSON.parse(data.innerHTML).success) {
+      // menu.style.display = 'flex'
+      menu.style.opacity = 1;
       var cityData = JSON.parse(data.innerHTML);
       city.innerHTML = cityData.name;
       categoryA.innerHTML = cityData.a;
@@ -1877,6 +1900,14 @@ var loadSvg = function loadSvg(data) {
       categoryC.innerHTML = cityData.c;
       categoryTotal.innerHTML = cityData.a + cityData.b + cityData.c;
       countOfMosque.innerHTML = cityData.sayi;
+    } else {
+      // menu.style.opacity = 0
+      city.innerHTML = JSON.parse(data.innerHTML).name;
+      categoryA.innerHTML = 0;
+      categoryB.innerHTML = 0;
+      categoryC.innerHTML = 0;
+      categoryTotal.innerHTML = 0;
+      countOfMosque.innerHTML = 0;
     }
   };
 
@@ -1884,18 +1915,16 @@ var loadSvg = function loadSvg(data) {
     this.querySelectorAll('polygon').forEach(function (polygon) {
       polygon.style.fill = '';
     });
-    menu.style.display = 'none';
-  };
+    menu.style.opacity = 0;
+  }; // const onMove = function(event){
+  //     menu.style.left = event.clientX + 30
+  //     menu.style.top = event.clientY
+  // }
 
-  var onMove = function onMove(event) {
-    menu.style.left = event.clientX + 30;
-    menu.style.top = event.clientY;
-  };
 
   citiesPolygons.forEach(function (city) {
-    city.addEventListener('mouseenter', onEnter);
-    city.addEventListener('mouseleave', onLeave);
-    city.addEventListener('mousemove', onMove);
+    city.addEventListener('click', onEnter); // city.addEventListener('mouseleave', onLeave)
+    // city.addEventListener('mousemove', onMove)
   });
 };
 
@@ -1934,7 +1963,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64339" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50383" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
