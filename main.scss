@@ -1,6 +1,7 @@
 $primaryColor: #5fadd4;
 $secondaryColor: #f49225;
 $menuBackgroundcolor: #424242;
+$backgroundColor: rgb(250, 250, 250);
 .html, body {
     width: 100%;
     height: 100%;
@@ -16,8 +17,8 @@ $menuBackgroundcolor: #424242;
         .map-header {
            display: flex;
            justify-content: space-evenly; 
-           background-color: $menuBackgroundcolor;
-           color: white;
+        //    background-color: $menuBackgroundcolor;
+           color: $menuBackgroundcolor;
            padding: 8px;
            margin-bottom: 8px;
         }
@@ -62,7 +63,7 @@ $menuBackgroundcolor: #424242;
             padding: 8px;
             flex-direction: column;
             align-items: center;
-            // background-color: lighten($menuBackgroundcolor, $amount: 5%);
+            background-color: darken($backgroundColor, $amount: 15%);
             border-radius: 8px;
             min-width: 125px;
             flex-grow: 1;
@@ -78,6 +79,7 @@ $menuBackgroundcolor: #424242;
         }
         .map-menu-button {
             width: 125px;
+            background-color: darken($backgroundColor, $amount: 15%);
         }
         .map-menu-city {
             text-transform: uppercase;
