@@ -16,8 +16,7 @@
 #turkey-svg-cities-continer .map-container .map-header {
   display: flex;
   justify-content: space-evenly;
-  background-color: #424242;
-  color: white;
+  color: #424242;
   padding: 8px;
   margin-bottom: 8px;
 }
@@ -59,6 +58,7 @@
   padding: 8px;
   flex-direction: column;
   align-items: center;
+  background-color: #d4d4d4;
   border-radius: 8px;
   min-width: 125px;
   flex-grow: 1;
@@ -70,6 +70,7 @@
 }
 #turkey-svg-cities-continer .map-menu .map-menu-button {
   width: 125px;
+  background-color: #d4d4d4;
 }
 #turkey-svg-cities-continer .map-menu .map-menu-city {
   text-transform: uppercase;
