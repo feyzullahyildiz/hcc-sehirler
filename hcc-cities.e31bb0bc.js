@@ -1772,7 +1772,13 @@ var config = require('./config');
 
 var map = document.querySelector('#turkey-svg-cities-continer .map-container .map');
 var mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header');
-var menu = document.querySelector('#turkey-svg-cities-continer .map-menu'); // [ 2857405, 4275017 ], [ 2857405, 5175729 ], [ 4989109, 5175729 ], [ 4989109, 4275017 ], [ 2857405, 4275017 ] //bbox
+var menu = document.querySelector('#turkey-svg-cities-continer .map-menu');
+var city = menu.querySelector('.map-menu-city');
+var categoryA = menu.querySelector('.map-menu-category.a');
+var categoryB = menu.querySelector('.map-menu-category.b');
+var categoryC = menu.querySelector('.map-menu-category.c');
+var categoryTotal = menu.querySelector('.map-menu-category-total');
+var countOfMosque = menu.querySelector('.map-menu-mosque-count'); // [ 2857405, 4275017 ], [ 2857405, 5175729 ], [ 4989109, 5175729 ], [ 4989109, 4275017 ], [ 2857405, 4275017 ] //bbox
 
 var loadSvg = function loadSvg(data) {
   var xSpace = 1420;
@@ -1862,17 +1868,6 @@ var loadSvg = function loadSvg(data) {
 
   var svg = "\n    <svg viewBox=\"0 0 1080 460\" width=\"100%\">\n    ".concat(pointArray, "\n    </svg>\n    ");
   map.innerHTML = svg;
-
-  var _menu$querySelectorAl = menu.querySelectorAll('li span'),
-      _menu$querySelectorAl2 = _slicedToArray(_menu$querySelectorAl, 6),
-      city = _menu$querySelectorAl2[0],
-      categoryA = _menu$querySelectorAl2[1],
-      categoryB = _menu$querySelectorAl2[2],
-      categoryC = _menu$querySelectorAl2[3],
-      categoryTotal = _menu$querySelectorAl2[4],
-      countOfMosque = _menu$querySelectorAl2[5]; // console.log('city', city)
-
-
   var citiesPolygons = map.querySelectorAll('svg g');
   var oldPolygons;
 
@@ -1901,7 +1896,6 @@ var loadSvg = function loadSvg(data) {
       categoryTotal.innerHTML = cityData.a + cityData.b + cityData.c;
       countOfMosque.innerHTML = cityData.sayi;
     } else {
-      // menu.style.opacity = 0
       city.innerHTML = JSON.parse(data.innerHTML).name;
       categoryA.innerHTML = 0;
       categoryB.innerHTML = 0;
@@ -1911,29 +1905,17 @@ var loadSvg = function loadSvg(data) {
     }
   };
 
-  var onLeave = function onLeave() {
-    this.querySelectorAll('polygon').forEach(function (polygon) {
-      polygon.style.fill = '';
-    });
-    menu.style.opacity = 0;
-  }; // const onMove = function(event){
-  //     menu.style.left = event.clientX + 30
-  //     menu.style.top = event.clientY
-  // }
-
-
   citiesPolygons.forEach(function (city) {
-    city.addEventListener('click', onEnter); // city.addEventListener('mouseleave', onLeave)
-    // city.addEventListener('mousemove', onMove)
+    city.addEventListener('click', onEnter);
   });
 };
 
 fetch(config.url).then(function (x) {
   return x.json();
 }).then(function (data) {
-  delete data["1"];
-  delete data["2"];
-  delete data["3"];
+  // delete data["1"]
+  // delete data["2"]
+  // delete data["3"]
   loadSvg(data);
 });
 },{"./iller.json":"iller.json","./iller-orta.json":"iller-orta.json","./config":"config.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
