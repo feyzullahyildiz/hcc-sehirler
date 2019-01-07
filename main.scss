@@ -39,7 +39,7 @@ $menuBackgroundcolor: #424242;
             }
         }
     }
-    ul.map-menu {
+    .map-menu {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -48,19 +48,27 @@ $menuBackgroundcolor: #424242;
         color: #f5f5f5;
         list-style: none;
         margin: 0;
-        li {
+        align-items: center;
+        & > div {
             display: flex;
-            margin: 4px 8px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .map-menu-item {
+            display: flex;
+            margin: 8px;
+            padding: 8px;
+            flex-direction: column;
+            align-items: center;
+            background-color: lighten($menuBackgroundcolor, $amount: 5%);
+            border-radius: 8px;
+            min-width: 125px;
             div {
-                font-size: 16px;
-                margin-right: 8px;
+                padding: 8px;
             }
-            span{
-                font-size: 16px;
-            }
-            // .map-menu-button {
-
-            // }
+        }
+        .map-menu-button {
+            width: 125px;
         }
         .map-menu-city {
             text-transform: uppercase;

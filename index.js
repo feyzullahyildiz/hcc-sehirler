@@ -5,6 +5,12 @@ const map = document.querySelector('#turkey-svg-cities-continer .map-container .
 const mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header')
 const menu = document.querySelector('#turkey-svg-cities-continer .map-menu')
 
+const city = menu.querySelector('.map-menu-city')
+const categoryA = menu.querySelector('.map-menu-category.a')
+const categoryB = menu.querySelector('.map-menu-category.b')
+const categoryC = menu.querySelector('.map-menu-category.c')
+const categoryTotal = menu.querySelector('.map-menu-category-total')
+const countOfMosque = menu.querySelector('.map-menu-mosque-count')
 // [ 2857405, 4275017 ], [ 2857405, 5175729 ], [ 4989109, 5175729 ], [ 4989109, 4275017 ], [ 2857405, 4275017 ] //bbox
 const loadSvg = function(data){
     const xSpace = 1420
@@ -46,8 +52,6 @@ const loadSvg = function(data){
     `
     map.innerHTML = svg
     
-    const [city, categoryA, categoryB, categoryC, categoryTotal, countOfMosque] = menu.querySelectorAll('li span')
-    // console.log('city', city)
     const citiesPolygons = map.querySelectorAll('svg g')
     let oldPolygons
     const onEnter = function(){
@@ -73,7 +77,6 @@ const loadSvg = function(data){
             categoryTotal.innerHTML = cityData.a + cityData.b + cityData.c
             countOfMosque.innerHTML = cityData.sayi
         }else{
-            // menu.style.opacity = 0
             city.innerHTML = JSON.parse(data.innerHTML).name
             categoryA.innerHTML = 0
             categoryB.innerHTML = 0
@@ -82,26 +85,14 @@ const loadSvg = function(data){
             countOfMosque.innerHTML = 0
         }
     }
-    const onLeave = function(){
-        this.querySelectorAll('polygon').forEach(polygon => {
-            polygon.style.fill = ''
-        })
-        menu.style.opacity = 0
-    }
-    // const onMove = function(event){
-    //     menu.style.left = event.clientX + 30
-    //     menu.style.top = event.clientY
-    // }
     citiesPolygons.forEach(city => {
         city.addEventListener('click', onEnter)
-        // city.addEventListener('mouseleave', onLeave)
-        // city.addEventListener('mousemove', onMove)
     })
 }
 
 fetch(config.url).then(x => x.json()).then(data => {
-    delete data["1"]
-    delete data["2"]
-    delete data["3"]
+    // delete data["1"]
+    // delete data["2"]
+    // delete data["3"]
     loadSvg(data)
 })
