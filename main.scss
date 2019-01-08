@@ -17,7 +17,6 @@ $backgroundColor: rgb(250, 250, 250);
         .map-header {
            display: flex;
            justify-content: space-evenly; 
-        //    background-color: $menuBackgroundcolor;
            color: $menuBackgroundcolor;
            padding: 8px;
            margin-bottom: 8px;
@@ -32,7 +31,8 @@ $backgroundColor: rgb(250, 250, 250);
                     transition: fill .3s ease-out;
                 }
                 &:hover polygon {
-                    fill: darken($primaryColor, 20%);
+                    // fill: darken($primaryColor, 20%);
+                    fill: $secondaryColor;
                 }
                 text tspan {
                     pointer-events: none;
@@ -42,37 +42,27 @@ $backgroundColor: rgb(250, 250, 250);
         }
     }
     .map-menu {
-        position: relative;
+        position: fixed;
         display: flex;
         flex-direction: column;
-        // background-color: $menuBackgroundcolor;
-        padding: 20px 40px 20px 20px;
+        opacity: 0;
+        padding: 16px;
         list-style: none;
         margin: 0;
+        left: 0;
+        top: 0;
         align-items: center;
-        & > div {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
+        background-color: #4b4b4b;
+        border-radius: 8px;
+        color: white;
+        pointer-events: none;
         .map-menu-item {
             display: flex;
-            margin: 8px;
-            padding: 8px;
-            flex-direction: column;
+            margin: 4px 2px;
             align-items: center;
-            background-color: darken($backgroundColor, $amount: 15%);
-            border-radius: 8px;
-            min-width: 125px;
+            // min-width: 125px;
             flex-grow: 1;
             font-size: 1rem;
-            color: black;
-            // @media screen and (max-width: 550px){
-            //     margin: 6px;
-            //     padding: 4px;
-            // }
             div {
                 padding: 8px;
             }
@@ -83,6 +73,12 @@ $backgroundColor: rgb(250, 250, 250);
         }
         .map-menu-city {
             text-transform: uppercase;
+        }
+        button {
+            display: none;
+            color: white;
+            flex-grow: 1;
+            margin: 4px auto;
         }
     }
 }
