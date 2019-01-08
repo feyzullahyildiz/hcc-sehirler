@@ -30,40 +30,34 @@
   transition: fill 0.3s ease-out;
 }
 #turkey-svg-cities-continer .map-container .map svg g:hover polygon {
-  fill: #2b7aa2;
+  fill: #f49225;
 }
 #turkey-svg-cities-continer .map-container .map svg g text tspan {
   pointer-events: none;
   user-select: none;
 }
 #turkey-svg-cities-continer .map-menu {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  padding: 20px 40px 20px 20px;
+  opacity: 0;
+  padding: 16px;
   list-style: none;
   margin: 0;
+  left: 0;
+  top: 0;
   align-items: center;
-}
-#turkey-svg-cities-continer .map-menu > div {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  background-color: #4b4b4b;
+  border-radius: 8px;
+  color: white;
+  pointer-events: none;
 }
 #turkey-svg-cities-continer .map-menu .map-menu-item {
   display: flex;
-  margin: 8px;
-  padding: 8px;
-  flex-direction: column;
+  margin: 4px 2px;
   align-items: center;
-  background-color: #d4d4d4;
-  border-radius: 8px;
-  min-width: 125px;
   flex-grow: 1;
   font-size: 1rem;
-  color: black;
 }
 #turkey-svg-cities-continer .map-menu .map-menu-item div {
   padding: 8px;
@@ -74,4 +68,10 @@
 }
 #turkey-svg-cities-continer .map-menu .map-menu-city {
   text-transform: uppercase;
+}
+#turkey-svg-cities-continer .map-menu button {
+  display: none;
+  color: white;
+  flex-grow: 1;
+  margin: 4px auto;
 }

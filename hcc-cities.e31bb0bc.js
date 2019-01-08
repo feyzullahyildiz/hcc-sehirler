@@ -1774,6 +1774,7 @@ var map = document.querySelector('#turkey-svg-cities-continer .map-container .ma
 var mapHeader = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-mosque-count');
 var totalPeopleCountDom = document.querySelector('#turkey-svg-cities-continer .map-container .map-header .map-header-total-people-count');
 var menu = document.querySelector('#turkey-svg-cities-continer .map-menu');
+var link = 'http://a.haydicocuklarcamiye.com/camiler/?sid=';
 var city = menu.querySelector('.map-menu-city');
 var categoryA = menu.querySelector('.map-menu-category.a');
 var categoryB = menu.querySelector('.map-menu-category.b');
@@ -1864,9 +1865,11 @@ var loadSvg = function loadSvg(data) {
 
     pointArray += "\n        <text x=\"".concat(x, "\" y=\"").concat(y, "\" fill=\"white\">\n            <tspan text-anchor=\"middle\">").concat(totalPeople, "</tspan>\n            </text>\n            <desc>").concat(data[code] ? JSON.stringify(_objectSpread({}, data[code], {
       name: name,
-      success: true
+      success: true,
+      code: code
     })) : JSON.stringify({
-      name: name
+      name: name,
+      code: code
     }), "</desc>\n        </g>");
   }
 
@@ -1877,27 +1880,15 @@ var loadSvg = function loadSvg(data) {
 
   var svg = "\n    <svg viewBox=\"0 0 1080 460\" width=\"100%\">\n    ".concat(pointArray, "\n    </svg>\n    ");
   map.innerHTML = svg;
+  var selectedData = undefined;
   var citiesPolygons = map.querySelectorAll('svg g');
-  var oldPolygons;
 
   var onEnter = function onEnter() {
-    if (oldPolygons) {
-      oldPolygons.forEach(function (oldPolygon) {
-        oldPolygon.style.fill = '';
-      });
-    }
+    menu.style.opacity = 1;
+    selectedData = this.querySelector('desc');
 
-    oldPolygons = [];
-    this.querySelectorAll('polygon').forEach(function (polygon) {
-      oldPolygons.push(polygon);
-      polygon.style.fill = '#f49225';
-    });
-    var data = this.querySelector('desc');
-
-    if (data.innerHTML && JSON.parse(data.innerHTML).success) {
-      // menu.style.display = 'flex'
-      menu.style.opacity = 1;
-      var cityData = JSON.parse(data.innerHTML);
+    if (selectedData.innerHTML && JSON.parse(selectedData.innerHTML).success) {
+      var cityData = JSON.parse(selectedData.innerHTML);
       city.innerHTML = cityData.name;
       categoryA.innerHTML = cityData.a;
       categoryB.innerHTML = cityData.b;
@@ -1905,7 +1896,7 @@ var loadSvg = function loadSvg(data) {
       categoryTotal.innerHTML = cityData.a + cityData.b + cityData.c;
       countOfMosque.innerHTML = cityData.sayi;
     } else {
-      city.innerHTML = JSON.parse(data.innerHTML).name;
+      city.innerHTML = JSON.parse(selectedData.innerHTML).name;
       categoryA.innerHTML = 0;
       categoryB.innerHTML = 0;
       categoryC.innerHTML = 0;
@@ -1914,8 +1905,64 @@ var loadSvg = function loadSvg(data) {
     }
   };
 
+  var onLeave = function onLeave() {
+    menu.style.opacity = 0.0;
+  };
+
+  var onMove = function onMove(event, isMobile) {
+    if (isMobile) {
+      if (window.innerWidth / 2 > event.touches[0].clientX) {
+        menu.style.left = event.touches[0].clientX + 20;
+        menu.style.top = event.touches[0].clientY;
+        menu.style.right = 'auto';
+      } else {
+        menu.style.right = window.innerWidth - event.touches[0].clientX + 20;
+        menu.style.top = event.touches[0].clientY;
+        menu.style.left = 'auto';
+      }
+
+      menu.style.pointerEvents = 'all';
+      return;
+    }
+
+    if (window.innerWidth / 2 > event.clientX) {
+      menu.style.left = event.clientX + 20;
+      menu.style.top = event.clientY;
+      menu.style.right = 'auto';
+    } else {
+      menu.style.right = window.innerWidth - event.clientX + 20;
+      menu.style.top = event.clientY;
+      menu.style.left = 'auto';
+    }
+  };
+
+  var onClick = function onClick() {
+    var data = this.querySelector('desc');
+    var code = JSON.parse(data.innerHTML).code;
+    location = link + code;
+  };
+
+  var showOnWebSiteButton = document.querySelector('.map-menu .map-menu-show-on-web-site');
+  showOnWebSiteButton.addEventListener('click', function (event) {
+    // console.log('selectedData', selectedData)
+    var code = JSON.parse(selectedData.innerHTML).code;
+    location = link + code;
+  });
+
+  var onTouch = function onTouch(event) {
+    showOnWebSiteButton.style.display = 'flex';
+    event.preventDefault();
+    event.stopPropagation();
+    onEnter.bind(this, event)();
+    onMove.bind(this, event, true)();
+  };
+
   citiesPolygons.forEach(function (city) {
-    city.addEventListener('click', onEnter);
+    city.addEventListener('touchstart', onTouch);
+    city.addEventListener('click', onClick);
+    city.addEventListener('mouseenter', onEnter);
+    city.addEventListener('mouseleave', onLeave);
+    city.addEventListener('mousemove', onMove);
   });
 };
 
@@ -1954,7 +2001,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54730" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49205" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
