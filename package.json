@@ -7,6 +7,8 @@
     "parcel": "parcel",
     "delete:dist": "rimraf dist",
     "build:gh-pages": "parcel build index.html --public-url /hcc-sehirler --no-source-maps",
+    "build:for:harita": "parcel build index.html --public-url /harita --no-source-maps",
+    "build:harita": "nmp-run-all delete:dist build:for:harita",
     "deploy:dist": "gh-pages -d dist",
     "deploy": "npm-run-all delete:dist build:gh-pages deploy:dist"
   },
