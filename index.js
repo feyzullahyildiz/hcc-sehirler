@@ -66,18 +66,18 @@ const loadSvg = function (data) {
         if (selectedData.innerHTML && JSON.parse(selectedData.innerHTML).success) {
             const cityData = JSON.parse(selectedData.innerHTML)
             city.innerHTML = cityData.name
-            categoryA.innerHTML = cityData.a
-            categoryB.innerHTML = cityData.b
-            categoryC.innerHTML = cityData.c
+            if (categoryA) categoryA.innerHTML = cityData.a;
+            if (categoryB) categoryB.innerHTML = cityData.b;
+            if (categoryC) categoryC.innerHTML = cityData.c;
             categoryTotal.innerHTML = cityData.a + cityData.b + cityData.c
             countOfMosque.innerHTML = cityData.sayi
         } else {
             city.innerHTML = JSON.parse(selectedData.innerHTML).name
-            categoryA.innerHTML = 0
-            categoryB.innerHTML = 0
-            categoryC.innerHTML = 0
-            categoryTotal.innerHTML = 0
-            countOfMosque.innerHTML = 0
+            if (categoryA) categoryA.innerHTML = 0;
+            if (categoryB) categoryB.innerHTML = 0;
+            if (categoryC) categoryC.innerHTML = 0;
+            if (categoryTotal) categoryTotal.innerHTML = 0;
+            if (countOfMosque) countOfMosque.innerHTML = 0;
         }
     }
     const onLeave = function () { 
