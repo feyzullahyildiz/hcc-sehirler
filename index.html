@@ -1,4 +1,5 @@
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,12 +7,22 @@
     <title>Turkey Cities</title>
     <link rel="stylesheet" href="main.scss">
 </head>
+
 <body>
     <div id="turkey-svg-cities-continer">
         <div class="map-container">
+
+            <div class="category-container">
+                <div data-type="a" class="category">A</div>
+                <div data-type="b" class="category">B</div>
+                <div data-type="sayi" class="category active">Toplam</div>
+                <div data-type="cami" class="category">Cami</div>
+                <div data-type="ilsor" class="category">İl Sorumlu Sayısı</div>
+                <div data-type="ilcesor" class="category">İlçe Sorumlu Sayısı</div>
+            </div>
             <div class="map-header">
                 <span class="map-header-total-people-count">Kayıt Sayısı: ?</span>
-                <span class="map-header-total-mosque-count">Cami Sayısı: ?</span>
+                <!-- <span class="map-header-total-mosque-count">Cami Sayısı: ?</span> -->
             </div>
             <div class="map"></div>
         </div>
@@ -19,12 +30,35 @@
             <div>
                 <span class="map-menu-city">Şehir Seçiniz</span>
             </div>
-            <div>
-                <div class="map-menu-item"><div>A Kategori: </div> <span class="map-menu-category a"></span></div>
-                <div class="map-menu-item"><div>B Kategori: </div> <span class="map-menu-category b"></span></div>
-                <div class="map-menu-item"><div>C Kategori: </div> <span class="map-menu-category c"></span></div>
+            <div class="map-menu-item-container">
+                <!-- <div class="map-menu-item"><div>A Kategori: </div><span class="map-menu-category a"></span></div>
+                <div class="map-menu-item"><div>B Kategori: </div><span class="map-menu-category b"></span></div>
                 <div class="map-menu-item"><div>Toplam Kayıt: </div><span class="map-menu-category-total"></span></div>
-                <div class="map-menu-item"><div>Cami: </div><span class="map-menu-mosque-count"></span></div>
+                <div class="map-menu-item"><div>Cami: </div><span class="map-menu-mosque-count"></span></div> -->
+                <div class="map-menu-item" data-type="a">
+                    <span class="key">A: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="map-menu-item" data-type="b">
+                    <span class="key">B: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="map-menu-item" data-type="sayi">
+                    <span class="key">Sayı: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="map-menu-item" data-type="cami">
+                    <span class="key">Cami: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="map-menu-item" data-type="ilsor">
+                    <span class="key">İl: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="map-menu-item" data-type="ilcesor">
+                    <span class="key">İlçe: </span>
+                    <span class="value"></span>
+                </div>
                 <button class="map-menu-show-on-web-site">Cami Listesi</button>
             </div>
             <!-- <div>
@@ -35,4 +69,5 @@
     <script src="fetch-polyfil.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
